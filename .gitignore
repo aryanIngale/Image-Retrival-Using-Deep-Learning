@@ -1,30 +1,26 @@
-# Python bytecode
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 
-# Virtual environments
+# Virtual env
 venv/
 ENV/
 .env/
 
-# TF/ML large files
+# Generated folders (NEVER push)
+static/uploads/
+static/feature/
+
+# ML / Deep Learning large files
 *.h5
 *.keras
+*.npy
 
-# IDE settings
+# IDE files
 .vscode/
 .idea/
 
-# OS junk
+# OS junk files
 Thumbs.db
 .DS_Store
-
-# Uploaded files
-static/uploads/
-
-# Extracted feature vectors
-static/feature/
-
-# Logs
-*.log
