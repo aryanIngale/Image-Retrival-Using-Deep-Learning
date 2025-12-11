@@ -1,0 +1,30 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+ENV/
+.env/
+
+# TF/ML large files
+*.h5
+*.keras
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Uploaded files
+static/uploads/
+
+# Extracted feature vectors
+static/feature/
+
+# Logs
+*.log

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="about-container">
+        <div class="pro_">
+            <h2>Project Name: Image Retrieval Using Deep Learning</h2>
+        </div>
+
+        <hr>
+
+        <h4 class="pro-name">Technique Used - Content-Based Image Retrieval (CBIR)</h4>
+
+        <br>
+        <hr>
+        <br>
+
+        <p>
+            Content-Based Image Retrieval (CBIR) searches images by visual similarity instead of text labels.
+            It extracts features such as color, texture, and shape from images and compares them with a database.
+        </p>
+
+        <p>
+            With deep learning models like ResNet, CBIR becomes far more accurate because neural networks extract
+            high-dimensional feature vectors that represent the image much more effectively.
+        </p>
+    </div>
+</body>
+</html>

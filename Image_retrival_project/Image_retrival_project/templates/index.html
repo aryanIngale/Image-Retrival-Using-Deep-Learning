@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Retrieval</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <h1>Image Retrieval</h1>
+        </div>
+        <nav class="header-right">
+            <a href="{{ url_for('about') }}" class="nav-btn">About Us</a>
+            <a href="{{ url_for('contact') }}" class="nav-btn">Contact</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="left-side">
+            <div class="heading-section">
+                <h1 class="sub-heading">Find Similar Images with Ease...</h1>
+                <p>Upload your image and let our search engine find similar images across the dataset in seconds.</p>
+            </div>
+            <hr>
+
+            <div class="upload-section">
+                <div class="upload-container">
+                    <form method="POST" enctype="multipart/form-data">
+                        <label for="query_img" class="upload-label">Upload Image:</label>
+                        <input type="file" name="query_img" id="query_img" accept="image/*" required>
+                        <button type="submit" class="upload-button">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <hr>
+        </div>
+
+        <div class="right-side">
+            <div class="right-image">
+                <img src="{{ url_for('static', filename='images/right-image.jpg') }}" alt="Right Side Image">
+            </div>
+        </div>
+    </div>
+
+    {% if query_path %}
+    <div class="query-image-section">
+        <h2 class="sub-heading">Query Image:</h2>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename=query_path) }}" alt="Query Image">
+        </div>
+    </div>
+    {% endif %}
+
+    {% if result_paths %}
+    <div class="results-section">
+        <h2 class="sub-heading">Similar Images:</h2>
+        <div class="results-container">
+            {% for result_path in result_paths %}
+            <div class="result-image">
+                <img src="{{ url_for('static', filename=result_path) }}" alt="Similar Image">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if not result_paths and query_path %}
+    <section class="no-results-section">
+        <p>No similar images found.</p>
+    </section>
+    {% endif %}
+</body>
+</html>
