@@ -24,3 +24,9 @@ static/feature/
 # OS junk files
 Thumbs.db
 .DS_Store
+
+
+# ignore dataset images
+static/img/
+static/uploads/
+static/feature/
